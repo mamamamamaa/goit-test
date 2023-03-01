@@ -3,8 +3,6 @@ import styled from "@emotion/styled";
 export const CardWrapper = styled.div`
   position: relative;
 
-  padding: 36px;
-
   width: 380px;
   height: 460px;
 
@@ -22,4 +20,12 @@ export const LogoIcon = styled.img`
   position: absolute;
   top: 20px;
   left: 20px;
+`;
+
+export const BgImage = styled.img`
+  position: absolute;
+
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
 `;
