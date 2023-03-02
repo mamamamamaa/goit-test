@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "1q",
+      "user": "Vladix",
+      "tweets": 777,
+      "followers": 2354,
+      "avatar": "https://hypeava.ru/uploads/posts/2020-09/1601067343_7.jpg"
+    },
+    {
+      "id": "2w",
+      "user": "Lenaix",
+      "tweets": 666,
+      "followers": 456,
+      "avatar": "https://trikky.ru/wp-content/blogs.dir/1/files/2021/01/24/136658939_406573117260081_5074268238308257118_n.jpg"
+    },
+    {
+      "id": "3e",
+      "user": "Maxix",
+      "tweets": 213,
+      "followers": 75456,
+      "avatar": "https://trikky.ru/wp-content/blogs.dir/1/files/2021/01/24/c8cb8aac30275e6acb529b06661fe54a.jpg"
+    }
+  ]
+}

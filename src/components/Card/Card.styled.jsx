@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.section`
   position: relative;
 
   width: 380px;
@@ -65,11 +65,10 @@ export const Ring = styled.div`
     inset 0px 4.39163px 3.29372px #fbf8ff;
 `;
 
-export const RingIcon = styled.img`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+export const UserAvatar = styled.img`
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
 `;
 
 export const RingContent = styled.div`
@@ -88,4 +87,49 @@ export const RingContent = styled.div`
     #5736a3 54.28%,
     #4b2a99 78.99%
   );
+`;
+
+export const TypographyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  margin: 26px 0;
+  gap: 16px;
+`;
+
+export const Typography = styled.p`
+  text-align: center;
+
+  margin: 0;
+
+  color: #ebd8ff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+`;
+
+export const FollowButton = styled.button`
+  display: block;
+
+  cursor: pointer;
+
+  width: 196px;
+  height: 50px;
+
+  margin: 0 auto;
+
+  color: #373737;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+
+  text-transform: uppercase;
+
+  border: none;
+  background: ${({ isFollowing }) => (isFollowing ? "#5CD3A8" : "#ebd8ff")};
+  box-shadow: 0 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 `;
