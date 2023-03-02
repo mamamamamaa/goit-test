@@ -14,19 +14,24 @@ import {
 import Logo from "../../assets/logo.svg";
 import Bg1x from "../../assets/bg-1x.png";
 import Bg2x from "../../assets/bg-2x.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const Card = ({ userData }) => {
-  const { id, user, tweets, followers, avatar } = userData;
+export const Card = ({ userData, update }) => {
+  const { id, tweets, followers, avatar, isFollowing } = userData;
 
-  const [isFollowing, setFollowing] = useState(false);
+  const [userFollowers, setUserFollowers] = useState(followers);
+  const [isFollow, setFollow] = useState(isFollowing);
 
-  const buttonText = isFollowing ? "Following" : "Follow";
+  const buttonText = isFollow ? "Following" : "Follow";
 
   const handleFollow = () => {
-    userData.followers += isFollowing ? -1 : 1;
-    setFollowing((prevState) => !prevState);
+    setUserFollowers((prevState) => (isFollow ? prevState - 1 : prevState + 1));
+    setFollow((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    update(id, isFollow, userFollowers);
+  }, [isFollow]);
 
   return (
     <CardWrapper>
@@ -42,13 +47,9 @@ export const Card = ({ userData }) => {
       </UserIconWrapper>
       <TypographyWrapper>
         <Typography>{tweets.toLocaleString()} tweets</Typography>
-        <Typography>{followers.toLocaleString()} Followers</Typography>
+        <Typography>{userFollowers.toLocaleString()} Followers</Typography>
       </TypographyWrapper>
-      <FollowButton
-        isFollowing={isFollowing}
-        onClick={handleFollow}
-        type="button"
-      >
+      <FollowButton isFollowing={isFollow} onClick={handleFollow} type="button">
         {buttonText}
       </FollowButton>
     </CardWrapper>
