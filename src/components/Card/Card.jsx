@@ -32,7 +32,7 @@ export const Card = ({ userData, update }) => {
         followersText={"followers"}
         followersValue={userFollowers}
         tweetsValue={tweets}
-        tweetsText={tweets}
+        tweetsText={"tweets"}
       />
       <FollowButton isFollowing={isFollow} onClick={handleFollow} type="button">
         {buttonText}
